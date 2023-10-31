@@ -72,6 +72,7 @@ class TestVarasto(unittest.TestCase):
 
     def test_ota_enemman_kuin_on(self):
         self.varasto.ota_varastosta(2)
+        # Varastoon ei voi jäädä alle 0
         self.assertAlmostEqual(self.varasto.saldo, 0)
         self.varasto.lisaa_varastoon(5)
         self.varasto.ota_varastosta(10)
