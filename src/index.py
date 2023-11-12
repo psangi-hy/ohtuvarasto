@@ -1,7 +1,14 @@
 from varasto import Varasto
 
 
-def setterit_ja_getterit(mehua, olutta):
+def main():
+    mehua = Varasto(100.0)
+    olutta = Varasto(100.0, 20.2)
+
+    print("Luonnin jälkeen:")
+    print(f"Mehuvarasto: {mehua}")
+    print(f"Olutvarasto: {olutta}")
+
     print("Olut getterit:")
     print(f"saldo = {olutta.saldo}")
     print(f"tilavuus = {olutta.tilavuus}")
@@ -15,8 +22,15 @@ def setterit_ja_getterit(mehua, olutta):
     mehua.ota_varastosta(3.14)
     print(f"Mehuvarasto: {mehua}")
 
+    print("Virhetilanteita:")
+    print("Varasto(-100.0);")
+    huono = Varasto(-100.0)
+    print(huono)
 
-def lisays(mehua, olutta):
+    print("Varasto(100.0, -50.7)")
+    huono = Varasto(100.0, -50.7)
+    print(huono)
+
     print(f"Olutvarasto: {olutta}")
     print("olutta.lisaa_varastoon(1000.0)")
     olutta.lisaa_varastoon(1000.0)
@@ -27,8 +41,6 @@ def lisays(mehua, olutta):
     mehua.lisaa_varastoon(-666.0)
     print(f"Mehuvarasto: {mehua}")
 
-
-def otto(mehua, olutta):
     print(f"Olutvarasto: {olutta}")
     print("olutta.ota_varastosta(1000.0)")
     saatiin = olutta.ota_varastosta(1000.0)
@@ -40,28 +52,6 @@ def otto(mehua, olutta):
     saatiin = mehua.ota_varastosta(-32.9)
     print(f"saatiin {saatiin}")
     print(f"Mehuvarasto: {mehua}")
-
-
-def main():
-    mehua = Varasto(100.0)
-    olutta = Varasto(100.0, 20.2)
-
-    print("Luonnin jälkeen:"
-        f"\nMehuvarasto: {mehua}"
-        f"\nOlutvarasto: {olutta}")
-
-    print("Virhetilanteita:")
-    print("Varasto(-100.0);")
-    huono = Varasto(-100.0)
-    print(huono)
-
-    print("Varasto(100.0, -50.7)")
-    huono = Varasto(100.0, -50.7)
-    print(huono)
-
-    setterit_ja_getterit(mehua, olutta)
-    lisays(mehua, olutta)
-    otto(mehua, olutta)
 
 
 if __name__ == "__main__":

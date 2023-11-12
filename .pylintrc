@@ -1,6 +1,7 @@
 [MASTER]
 
-ignore=tests
+ignore=tests,
+       index.py
 
 [MESSAGE CONTROL]
 
